@@ -1,0 +1,50 @@
+{
+  "section": "speaking",
+  "version": "1.0",
+  "items": [
+    {
+      "id": 1,
+      "group": "🏥 Gesundheit – الصحة",
+      "topic_de": "Gesundheitssystem in Deutschland",
+      "topic_ar": "النظام الصحي في ألمانيا",
+      "inhalt": "Das Gesundheitssystem in Deutschland besteht aus gesetzlicher und privater Krankenversicherung. Die meisten Menschen sind gesetzlich versichert.",
+      "meinung": "Ich finde, dass das deutsche Gesundheitssystem sehr gut organisiert ist, obwohl die Wartezeiten manchmal lang sein können.",
+      "erfahrung": "In meiner Arbeit als medizinisches Fachpersonal habe ich erlebt, wie wichtig eine gute Krankenversicherung ist.",
+      "meinung_ar": "أعتقد أن النظام الصحي الألماني منظم بشكل جيد جداً، وإن كانت فترات الانتظار طويلة أحياناً.",
+      "erfahrung_ar": "من خلال عملي في المجال الطبي، رأيت أهمية التأمين الصحي الجيد."
+    },
+    {
+      "id": 2,
+      "group": "🏥 Gesundheit – الصحة",
+      "topic_de": "Stress und Burnout",
+      "topic_ar": "الضغط النفسي والإرهاق",
+      "inhalt": "Stress und Burnout sind heutzutage weit verbreitet, besonders im Berufsleben. Die Ursachen sind vielfältig: hohe Arbeitsbelastung, Zeitdruck und mangelnde Work-Life-Balance.",
+      "meinung": "Meiner Meinung nach sollten Arbeitgeber mehr Verantwortung für die psychische Gesundheit ihrer Mitarbeiter übernehmen.",
+      "erfahrung": "Ich selbst versuche, durch Sport und regelmäßige Pausen meinen Stress zu reduzieren.",
+      "meinung_ar": "برأيي، يجب على أصحاب العمل تحمّل مسؤولية أكبر تجاه الصحة النفسية لموظفيهم.",
+      "erfahrung_ar": "أحاول شخصياً تقليل التوتر من خلال ممارسة الرياضة وأخذ فترات راحة منتظمة."
+    },
+    {
+      "id": 3,
+      "group": "🌍 Umwelt – البيئة",
+      "topic_de": "Klimawandel und Umweltschutz",
+      "topic_ar": "تغير المناخ وحماية البيئة",
+      "inhalt": "Der Klimawandel ist eine der größten Herausforderungen unserer Zeit. Steigende Temperaturen, Extremwetterereignisse und schmelzende Gletscher sind sichtbare Folgen.",
+      "meinung": "Ich bin der Meinung, dass jeder Einzelne zur Bekämpfung des Klimawandels beitragen kann und muss – durch bewussten Konsum und Energiesparen.",
+      "erfahrung": "Ich trenne meinen Müll sorgfältig und versuche, öffentliche Verkehrsmittel zu nutzen, um meinen CO₂-Fußabdruck zu reduzieren.",
+      "meinung_ar": "أعتقد أن كل فرد يستطيع ويجب أن يساهم في مكافحة تغير المناخ — من خلال الاستهلاك الواعي وترشيد الطاقة.",
+      "erfahrung_ar": "أفرز نفاياتي بعناية وأحاول استخدام وسائل النقل العامة لتقليل بصمتي الكربونية."
+    },
+    {
+      "id": 4,
+      "group": "🏠 Wohnen – السكن",
+      "topic_de": "Wohnungsmangel in Städten",
+      "topic_ar": "أزمة السكن في المدن",
+      "inhalt": "In vielen deutschen Großstädten herrscht ein großer Wohnungsmangel. Die Mieten steigen kontinuierlich, während das Angebot an bezahlbaren Wohnungen sinkt.",
+      "meinung": "Ich denke, der Staat sollte mehr in den sozialen Wohnungsbau investieren, damit sich auch Menschen mit niedrigem Einkommen das Wohnen in der Stadt leisten können.",
+      "erfahrung": "Bei der Wohnungssuche habe ich selbst erlebt, wie schwierig es ist, eine bezahlbare Wohnung zu finden.",
+      "meinung_ar": "أعتقد أن الدولة يجب أن تستثمر أكثر في الإسكان الاجتماعي حتى يتمكن ذوو الدخل المحدود من الإقامة في المدينة.",
+      "erfahrung_ar": "عند بحثي عن شقة، اختبرت بنفسي مدى صعوبة إيجاد مسكن بسعر معقول."
+    }
+  ]
+}

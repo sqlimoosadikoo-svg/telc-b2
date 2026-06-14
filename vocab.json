@@ -1,0 +1,42 @@
+{
+  "section": "vocab",
+  "version": "1.0",
+  "items": [
+    {
+      "de": "die Krankenversicherung",
+      "type": "Nomen · f",
+      "ar": "التأمين الصحي",
+      "example": "Die Krankenversicherung übernimmt die Kosten."
+    },
+    {
+      "de": "die Arbeitslosigkeit",
+      "type": "Nomen · f",
+      "ar": "البطالة",
+      "example": "Die Arbeitslosigkeit ist in diesem Jahr gestiegen."
+    },
+    {
+      "de": "nachhaltig",
+      "type": "Adjektiv",
+      "ar": "مستدام / دائم الأثر",
+      "example": "Wir brauchen nachhaltige Lösungen für die Umwelt."
+    },
+    {
+      "de": "berücksichtigen",
+      "type": "Verb",
+      "ar": "يأخذ بعين الاعتبار",
+      "example": "Man muss alle Faktoren berücksichtigen."
+    },
+    {
+      "de": "die Herausforderung",
+      "type": "Nomen · f",
+      "ar": "التحدي",
+      "example": "Der Klimawandel ist eine große Herausforderung."
+    },
+    {
+      "de": "das Bewusstsein",
+      "type": "Nomen · n",
+      "ar": "الوعي / الإدراك",
+      "example": "Das Bewusstsein für Umweltprobleme wächst."
+    }
+  ]
+}

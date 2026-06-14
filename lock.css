@@ -1,0 +1,181 @@
+/* ═══════════════════════════════════
+   LOCK SCREEN STYLES
+═══════════════════════════════════ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --black:   #0a0a0f;
+  --dark:    #111118;
+  --card:    #16161e;
+  --border:  #2a2a3a;
+  --gold:    #c9a84c;
+  --gold-lt: #e8c96a;
+  --white:   #f0eff8;
+  --muted:   #7a7a9a;
+  --error:   #e05252;
+  --green:   #4caf87;
+  --font:    'Cairo', sans-serif;
+  --mono:    'IBM Plex Mono', monospace;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--black);
+  color: var(--white);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── Grid background ── */
+#lock-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: var(--black);
+  padding: 1.5rem;
+}
+
+.lock-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(201, 168, 76, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201, 168, 76, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+
+/* ── Card ── */
+.lock-card {
+  position: relative;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 3rem 2.5rem;
+  width: 100%;
+  max-width: 440px;
+  text-align: center;
+  box-shadow:
+    0 0 0 1px rgba(201,168,76,0.1),
+    0 32px 64px rgba(0,0,0,0.6);
+}
+
+/* ── Logo ── */
+.lock-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--black);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1.5rem;
+  font-family: var(--mono);
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.lock-logo-de { color: var(--gold); }
+.lock-logo-b2 { color: var(--white); }
+
+/* ── Title ── */
+.lock-title {
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.lock-subtitle {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 2.5rem;
+  line-height: 1.7;
+}
+
+/* ── Input ── */
+.lock-input-group {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.lock-input {
+  flex: 1;
+  background: var(--dark);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  color: var(--white);
+  font-family: var(--mono);
+  font-size: 1.1rem;
+  text-align: center;
+  letter-spacing: 2px;
+  outline: none;
+  transition: border-color 0.2s;
+  direction: ltr;
+}
+
+.lock-input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(201,168,76,0.15);
+}
+
+.lock-input::placeholder {
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+
+.lock-btn {
+  background: var(--gold);
+  color: var(--black);
+  border: none;
+  border-radius: 10px;
+  padding: 0.85rem 1.2rem;
+  font-family: var(--font);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.lock-btn:hover { background: var(--gold-lt); }
+.lock-btn:active { transform: scale(0.97); }
+.lock-btn-arrow { font-size: 1.1rem; }
+
+/* ── Error ── */
+.lock-error {
+  color: var(--error);
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+/* ── Footer ── */
+.lock-footer {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.88rem;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.lock-contact {
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 600;
+}
+.lock-contact:hover { text-decoration: underline; }
+
+/* ── Utility ── */
+.hidden { display: none !important; }
