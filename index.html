@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TELC B2 – مركز التحضير الذكي</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/lock.css" />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     LOCK SCREEN (shown by default)
+═══════════════════════════════════════════ -->
+<div id="lock-screen">
+  <div class="lock-bg-grid"></div>
+  <div class="lock-card">
+    <div class="lock-logo">
+      <span class="lock-logo-de">DE</span>
+      <span class="lock-logo-b2">B2</span>
+    </div>
+    <h1 class="lock-title">TELC Deutsch B2</h1>
+    <p class="lock-subtitle">منصة التحضير المتكاملة · أدخل كود التفعيل للمتابعة</p>
+
+    <div class="lock-input-group">
+      <input
+        id="access-code-input"
+        type="text"
+        class="lock-input"
+        placeholder="XXXX-XXXX-XXXX"
+        maxlength="14"
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <button class="lock-btn" onclick="verifyCode()">
+        دخول
+        <span class="lock-btn-arrow">←</span>
+      </button>
+    </div>
+
+    <p id="lock-error" class="lock-error hidden">❌ الكود غير صحيح أو منتهي الصلاحية</p>
+
+    <div class="lock-footer">
+      <span>لا يوجد لديك كود؟</span>
+      <a href="https://t.me/YOUR_TELEGRAM" target="_blank" class="lock-contact">تواصل معنا</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     MAIN APP (hidden until unlocked)
+═══════════════════════════════════════════ -->
+<div id="app" class="hidden">
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <span class="nav-de">DE</span><span class="nav-b2">B2</span>
+      <span class="nav-tagline">TELC Deutsch</span>
+    </div>
+    <button class="nav-hamburger" onclick="toggleMobileMenu()" aria-label="القائمة">☰</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#home" class="nav-link active">الرئيسية</a></li>
+      <li><a href="#exams" class="nav-link">الامتحانات</a></li>
+      <li><a href="#reading" class="nav-link">القراءة</a></li>
+      <li><a href="#writing" class="nav-link">الكتابة</a></li>
+      <li><a href="#speaking" class="nav-link">المحادثة</a></li>
+      <li><a href="#listening" class="nav-link">الاستماع</a></li>
+      <li><a href="#vocab" class="nav-link">المفردات</a></li>
+      <li>
+        <span class="nav-badge" id="nav-expiry"></span>
+      </li>
+      <li>
+        <button class="nav-logout" onclick="logout()">خروج</button>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <div class="hero-eyebrow">منصة التحضير الشاملة</div>
+      <h1 class="hero-title">
+        أتقن ألمانيتك،<br/>
+        <span class="hero-accent">اجتز B2.</span>
+      </h1>
+      <p class="hero-desc">
+        كل ما تحتاجه لاجتياز امتحان TELC Deutsch B2 — نماذج امتحانات، تحليل أخطاء، قوالب الكتابة، بطاقات المحادثة، ومفردات منظمة.
+      </p>
+      <div class="hero-cta-row">
+        <a href="#exams" class="btn-primary">ابدأ الآن</a>
+        <a href="#speaking" class="btn-ghost">بطاقات المحادثة</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-card">
+        <div class="stat-num" id="stat-exams">32</div>
+        <div class="stat-label">نموذج امتحان</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">38</div>
+        <div class="stat-label">موضوع محادثة</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">500+</div>
+        <div class="stat-label">مفردة B2</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTIONS OVERVIEW -->
+  <section class="sections-grid" id="exams">
+    <div class="section-header">
+      <h2>أقسام المنصة</h2>
+      <p>كل قسم مصمم لتغطية جزء من الامتحان بدقة</p>
+    </div>
+    <div class="cards-grid" id="sections-container">
+      <!-- populated by JS -->
+    </div>
+  </section>
+
+  <!-- READING SECTION -->
+  <section id="reading" class="content-section">
+    <div class="section-header">
+      <h2>Leseverstehen · القراءة</h2>
+      <p>نماذج + مفاتيح الإجابة + أسلوب التفكير</p>
+    </div>
+    <div id="reading-content" class="content-placeholder">
+      <div class="loader">جارٍ تحميل المحتوى...</div>
+    </div>
+  </section>
+
+  <!-- WRITING SECTION -->
+  <section id="writing" class="content-section alt-bg">
+    <div class="section-header">
+      <h2>Schreiben · الكتابة</h2>
+      <p>قوالب جاهزة لرسائل الشكوى والاقتراح والتعليق</p>
+    </div>
+    <div id="writing-content" class="content-placeholder">
+      <div class="loader">جارٍ تحميل المحتوى...</div>
+    </div>
+  </section>
+
+  <!-- SPEAKING SECTION -->
+  <section id="speaking" class="content-section">
+    <div class="section-header">
+      <h2>Mündlicher Teil · المحادثة</h2>
+      <p>38 موضوعاً مقسمة على 8 مجموعات ثيماتية</p>
+    </div>
+    <div id="speaking-content" class="content-placeholder">
+      <div class="loader">جارٍ تحميل المحتوى...</div>
+    </div>
+  </section>
+
+  <!-- VOCAB SECTION -->
+  <section id="vocab" class="content-section alt-bg">
+    <div class="section-header">
+      <h2>Wortschatz · المفردات</h2>
+      <p>بطاقات مفردات مرتبة حسب الموضوع</p>
+    </div>
+    <div id="vocab-content" class="content-placeholder">
+      <div class="loader">جارٍ تحميل المحتوى...</div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-brand">
+      <span class="nav-de">DE</span><span class="nav-b2">B2</span>
+    </div>
+    <p class="footer-text">© 2025 TELC B2 منصة التحضير · جميع الحقوق محفوظة</p>
+    <p class="footer-sub">هذا المحتوى حصري لأصحاب الاشتراكات الفعّالة</p>
+  </footer>
+
+</div><!-- end #app -->
+
+<script src="js/codes.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
